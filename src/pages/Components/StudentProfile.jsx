@@ -119,7 +119,7 @@ export default function StudentProfile(props) {
                     <div className="referral-cards3">
                       <div className="referral-details1">
                         <div className="details-label2">
-                          <div>Current Topics &nbsp;:&nbsp; xxxxxx</div>
+                          <div>Current Topics &nbsp;:&nbsp; JavaScript</div>
                           <div className="checkList">
                             <div>Progress </div>
 
