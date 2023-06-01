@@ -56,7 +56,7 @@ export default function NavBar({ navigate }) {
             {/* <button id="log-btn2" onClick={() =}>
               Logout
             </button> */}
-            <Link to="/login" id="log-btn2">
+            <Link to="/" id="log-btn2">
               Logout
             </Link>
             {/* )} */}
@@ -107,7 +107,7 @@ export default function NavBar({ navigate }) {
               <button id="log-btn1dwn">Log in</button>
             ) : ( */}
             {/* <button >Log out</button> */}
-            <Link to="/login" id="log-btn2dwn">
+            <Link to="/" id="log-btn2dwn">
               Logout
             </Link>
             {/* )} */}
