@@ -9,6 +9,7 @@ function setStoragevalues() {
     return {
       fullname: "",
       mobilenumber: "",
+      email: "",
       companyname: "",
       password: "",
       confirmpwd: "",
@@ -76,6 +77,17 @@ export default function ReferralCreation({ navigate }) {
                     autoComplete="new-password"
                     onChange={handleChange}
                     required
+                  ></input>
+                </div>
+                <div className="input">
+                  <input
+                    type="text"
+                    id="input-email"
+                    name="email"
+                    placeholder="Email Address"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    required
+                    onChange={handleChange}
                   ></input>
                 </div>
                 <div className="input">
