@@ -4,6 +4,8 @@ import "./Assest/StyleLogin.css";
 import { useState, useEffect } from "react";
 import { FaCloudUploadAlt } from "react-icons/fa";
 
+import axios from "axios";
+
 // function setStoragevalues() {
 //   const storeVal = localStorage.setItem("input");
 //   if (!storeVal)
@@ -115,7 +117,7 @@ export default function StudentCreation({ navigate }) {
   const [label, setLabel] = useState("Upload Image");
 
   //Submit
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(input);
     localStorage.setItem("input", JSON.stringify(input));
@@ -123,6 +125,9 @@ export default function StudentCreation({ navigate }) {
     setEndDate("");
     setImage(null);
     navigate("/adminstudent");
+    await axios.post("https://6479821ca455e257fa6342c7.mockapi.io/studinfo", {
+      input,
+    });
 
     // const input1 = document.getElementById("img");
 
@@ -230,7 +235,7 @@ export default function StudentCreation({ navigate }) {
                       >
                         <option value="Referral name">Referral name</option>
                         {refList.map((data, index) => (
-                          <option key={index} value={data.id}>
+                          <option key={index} value={index.id}>
                             {data.name}
                           </option>
                         ))}

@@ -316,6 +316,8 @@
 .referral-table {
   background: linear-gradient(101.37deg, #1f4068 1.17%, #206a5d 99.55%);
   height: 70vh;
+  border-radius: 12px;
+  border: 2px solid #ffffff;
 }
 
 .studentHead1 {
