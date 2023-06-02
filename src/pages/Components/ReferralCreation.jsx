@@ -2,22 +2,26 @@ import React from "react";
 import NavBar from "./NavBar";
 import "./Assest/StyleLogin.css";
 import { useState, useEffect } from "react";
+import axios from "axios";
 
-function setStoragevalues() {
-  const storeVal = localStorage.getItem("input1");
-  if (!storeVal)
-    return {
-      fullname: "",
-      mobilenumber: "",
-      email: "",
-      companyname: "",
-      password: "",
-      confirmpwd: "",
-    };
-  return JSON.parse(storeVal);
-}
+// function setStoragevalues() {
+//   const storeVal = localStorage.getItem("input1");
+//   if (!storeVal)
+//     return {
+
+//     };
+//   return JSON.parse(storeVal);
+// }
+
 export default function ReferralCreation({ navigate }) {
-  const [input1, setInput] = useState(setStoragevalues);
+  const [input1, setInput] = useState({
+    fullname: "",
+    mobilenumber: "",
+    email: "",
+    companyname: "",
+    password: "",
+    confirmpwd: "",
+  });
   const [errors, setErrors] = useState({});
   const handleChange = (e) => {
     setInput({ ...input1, [e.target.name]: e.target.value });
@@ -34,16 +38,19 @@ export default function ReferralCreation({ navigate }) {
     }
   };
 
-  const sumbitReferral = (e) => {
+  const sumbitReferral = async (e) => {
     e.preventDefault();
     setErrors(validation(input1));
-    console.log(input1);
+    // console.log(input1);
     e.target.reset();
     navigate("/adminreferral");
+    await axios.post("https://6479821ca455e257fa6342c7.mockapi.io/refinfo", {
+      input1,
+    });
   };
-  useEffect(() => {
-    localStorage.setItem("input1", JSON.stringify(input1));
-  }, [input1]);
+  // useEffect(() => {
+  //   localStorage.setItem("input1", JSON.stringify(input1));
+  // }, [input1]);
 
   return (
     <>

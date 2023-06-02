@@ -93,16 +93,46 @@ StudentFullList*/
   /* gap: 12%; */
 }
 
-.button {
-  border: 2px solid black;
-  width: 320px;
-  height: 70px;
-  margin: 0;
-  border-radius: 12px;
-  background: #1f4068;
+.referral-button {
+  border-radius: 10px;
+  outline: 3px solid #052448;
+  width: 200px;
+  /* height: 30px; */
+  margin: 22px;
+  background-color: #1f4068;
+  padding: 5px 8px;
+  font-weight: 600;
   color: #ffffff;
   font-family: "Nunito";
-  font-size: 28px;
+  font-size: 18px;
+  border: none;
+}
+
+.referral-button:hover {
+  outline-offset: 2px;
+}
+
+.student-button {
+  border-radius: 10px;
+  outline: 3px solid #052448;
+  width: 200px;
+  /* height: 30px; */
+  margin: 22px;
+  background-color: #1f4068;
+  padding: 5px 8px;
+  font-weight: 600;
+  color: #ffffff;
+  font-family: "Nunito";
+  font-size: 18px;
+  border: none;
+}
+
+.student-button:hover {
+  outline-offset: 2px;
+}
+
+.content {
+  display: flex;
 }
 
 .bodyBar {
@@ -123,6 +153,8 @@ StudentFullList*/
 
 .search-input {
   padding: 1% 2% 0 0;
+  margin-top: 19px;
+  /* height: 50px !important; */
 }
 
 .search {

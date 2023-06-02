@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./HomePage";
-import AdminReferral from "./AdminReferral";
-import AdminStudent from "./AdminStudent";
+// import AdminReferral from "./AdminReferral";
+// import AdminStudent from "./AdminStudent";
 import ReferralFullList from "./ReferralFullList";
 import StudentFullList from "./StudentFullList";
 import StudentProfile from "./StudentProfile";
@@ -18,10 +18,10 @@ export default function RoutingComponent() {
   const AdminLoginWithNavigation = WithNavigation(LoginPage);
   const StudentCreationWithNaviagtion = WithNavigation(StudentCreation);
   const ReferralCreationWithNaviagtion = WithNavigation(ReferralCreation);
-  const AdminReferralWithNaviagtion = WithNavigation(AdminReferral);
-  const AdminStudentWithNaviagtion = WithNavigation(AdminStudent);
-  const ReferralFullListWithNaviagtion = WithNavigation(ReferralFullList);
-  const StudentFullListWithNaviagtion = WithNavigation(StudentFullList);
+  const AdminReferralWithNaviagtion = WithNavigation(ReferralFullList);
+  const AdminStudentWithNaviagtion = WithNavigation(StudentFullList);
+  // const ReferralFullListWithNaviagtion = WithNavigation(ReferralFullList);
+  // const StudentFullListWithNaviagtion = WithNavigation(StudentFullList);
   const HomePageWithNaviagtion = WithNavigation(HomePage);
   const StudentProfileWithNaviagtion = WithNavigation(StudentProfile);
   const ReferralProfileWithNaviagtion = WithNavigation(ReferralProfile);
@@ -49,14 +49,14 @@ export default function RoutingComponent() {
             path="/adminstudent"
             element={<AdminStudentWithNaviagtion />}
           ></Route>
-          <Route
+          {/* <Route
             path="/referralfulllist"
             element={<ReferralFullListWithNaviagtion />}
           ></Route>
           <Route
             path="/studentfulllist"
             element={<StudentFullListWithNaviagtion />}
-          ></Route>
+          ></Route> */}
           <Route
             path="/referralcreation"
             element={<ReferralCreationWithNaviagtion />}
