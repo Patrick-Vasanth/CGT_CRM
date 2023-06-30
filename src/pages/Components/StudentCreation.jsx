@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "./NavBar";
 import "./Assest/StyleLogin.css";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { FaCloudUploadAlt } from "react-icons/fa";
 
 import axios from "axios";
@@ -25,7 +26,7 @@ import axios from "axios";
 //   return JSON.parse(storeVal);
 // }
 
-export default function StudentCreation({ navigate }) {
+export default function StudentCreation() {
   const [input, setInput] = useState({
     fullname: "",
     mobilenumber: "",
@@ -39,6 +40,8 @@ export default function StudentCreation({ navigate }) {
     enddate: "",
     profilePicture: null,
   });
+
+  const navigate = useNavigate();
 
   const [refList, setRefList] = useState([
     {
@@ -216,7 +219,7 @@ export default function StudentCreation({ navigate }) {
                         id="email"
                         name="email"
                         placeholder="Email Address"
-                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                        pattern="[\-a-zA-Z0-9~!$%\^&amp;*_=+}{\'?]+(\.[\-a-zA-Z0-9~!$%\^&amp;*_=+}{\'?]+)*@([a-zA-Z0-9_][\-a-zA-Z0-9_]*(\.[\-a-zA-Z0-9_]+)*\.([cC][oO][mM]))(:[0-9]{1,5})?$"
                         required
                         onChange={handleChange}
                       ></input>
@@ -235,7 +238,7 @@ export default function StudentCreation({ navigate }) {
                       >
                         <option value="Referral name">Referral name</option>
                         {refList.map((data, index) => (
-                          <option key={index} value={index.id}>
+                          <option key={index.id} value={index.name}>
                             {data.name}
                           </option>
                         ))}
@@ -278,7 +281,7 @@ export default function StudentCreation({ navigate }) {
                       >
                         <option value="Course">Course</option>
                         {courseList.map((courseData, index1) => (
-                          <option key={index1} value={courseData.id}>
+                          <option key={index1} value={courseData.name}>
                             {courseData.course}
                           </option>
                         ))}

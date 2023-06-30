@@ -25,6 +25,11 @@ export default function NavBar() {
     setShowbars(true);
   };
 
+  // const logOut = (e) => {
+  //   e.preventDefault();
+  //   console.log("Hai");
+  // };
+
   return (
     <>
       <div className="nav2">
@@ -40,13 +45,8 @@ export default function NavBar() {
                 </Link>
               </li>
               <li>
-                <Link href="refDetails" to="/adminreferral">
-                  Referral Details
-                </Link>
-              </li>
-              <li>
-                <Link href="stuDetails" to="/adminstudent">
-                  Student Details
+                <Link href="#refProfile" to="/referralprofile">
+                  Profile
                 </Link>
               </li>
             </ul>
@@ -85,13 +85,8 @@ export default function NavBar() {
                 </Link>
               </li>
               <li>
-                <Link href="refDetails" to="/adminreferral">
-                  Referral Details
-                </Link>
-              </li>
-              <li>
-                <Link href="stuDetails" to="/adminstudent">
-                  Student Details
+                <Link href="#refProfile" to="/referralprofile">
+                  Profile
                 </Link>
               </li>
             </ul>

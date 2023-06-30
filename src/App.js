@@ -1,10 +1,10 @@
-import RoutingComponent from "./pages/Components/RoutingComponent";
+import LoginCredentials from "./pages/Components/LoginCredentials";
 
 import "./App.css";
 function App() {
   return (
     <div className="main">
-      <RoutingComponent />
+      <LoginCredentials />
     </div>
   );
 }
