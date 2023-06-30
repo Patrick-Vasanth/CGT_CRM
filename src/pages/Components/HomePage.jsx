@@ -1,7 +1,13 @@
+import { useLocation } from "react-router-dom";
 import "./Assest/Style.css";
 import NavBar from "./NavBar";
+import ReferralNavBar from "./ReferralNavBar";
 
-export default function HomePage() {
+export default function HomePage({ access }) {
+  // const location = useLocation();
+  // const access = location.state.name;
+  // console.log(access);
+
   return (
     <>
       <NavBar />

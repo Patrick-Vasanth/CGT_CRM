@@ -11,68 +11,38 @@ import WithParam from "./WithParams";
 import ReferralCreation from "./ReferralCreation";
 import StudentCreation from "./StudentCreation";
 import LoginPage from "./LoginPage";
-import ReferralLogin from "./ReferralLogin";
 import LoginCredentials from "./LoginCredentials";
+import ForgetPassword from "./ForgetPassword";
 
 export default function RoutingComponent() {
-  const AdminLoginWithNavigation = WithNavigation(LoginPage);
+  const LoginWithNavigation = WithNavigation(LoginPage);
   const StudentCreationWithNaviagtion = WithNavigation(StudentCreation);
   const ReferralCreationWithNaviagtion = WithNavigation(ReferralCreation);
   const AdminReferralWithNaviagtion = WithNavigation(ReferralFullList);
   const AdminStudentWithNaviagtion = WithNavigation(StudentFullList);
-  // const ReferralFullListWithNaviagtion = WithNavigation(ReferralFullList);
-  // const StudentFullListWithNaviagtion = WithNavigation(StudentFullList);
+  const ForgetPasswordWithNavigation = WithNavigation(ForgetPassword);
   const HomePageWithNaviagtion = WithNavigation(HomePage);
   const StudentProfileWithNaviagtion = WithNavigation(StudentProfile);
   const ReferralProfileWithNaviagtion = WithNavigation(ReferralProfile);
-  const ReferralLoginWithNavigation = WithNavigation(ReferralLogin);
+
   const LoginCredentialsWithNavigation = WithNavigation(LoginCredentials);
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<LoginCredentialsWithNavigation />}></Route>
-          <Route
-            path="/adminlogin"
-            element={<AdminLoginWithNavigation />}
-          ></Route>
-          <Route
-            path="/referrallogin"
-            element={<ReferralLoginWithNavigation />}
-          ></Route>
-          <Route path="/home" element={<HomePageWithNaviagtion />}></Route>
-          <Route
-            path="/adminreferral"
-            element={<AdminReferralWithNaviagtion />}
-          ></Route>
-          <Route
-            path="/adminstudent"
-            element={<AdminStudentWithNaviagtion />}
-          ></Route>
-          {/* <Route
-            path="/referralfulllist"
-            element={<ReferralFullListWithNaviagtion />}
-          ></Route>
-          <Route
-            path="/studentfulllist"
-            element={<StudentFullListWithNaviagtion />}
-          ></Route> */}
+          <Route path="/" element={<LoginCredentials />}></Route>
+          <Route path="/login" element={<LoginPage />}></Route>
+
+          <Route path="/home" element={<HomePage />}></Route>
+          <Route path="/adminreferral" element={<ReferralFullList />}></Route>
+          <Route path="/adminstudent" element={<StudentFullList />}></Route>
           <Route
             path="/referralcreation"
-            element={<ReferralCreationWithNaviagtion />}
+            element={<ReferralCreation />}
           ></Route>
-          <Route
-            path="/studentcreation"
-            element={<StudentCreationWithNaviagtion />}
-          ></Route>
-          <Route
-            path="/studentprofile"
-            element={<StudentProfileWithNaviagtion />}
-          ></Route>
-          <Route
-            path="/referralprofile"
-            element={<ReferralProfileWithNaviagtion />}
-          ></Route>
+          <Route path="/studentcreation" element={<StudentCreation />}></Route>
+          <Route path="/studentprofile" element={<StudentProfile />}></Route>
+          <Route path="/referralprofile" element={<ReferralProfile />}></Route>
         </Routes>
       </Router>
     </>

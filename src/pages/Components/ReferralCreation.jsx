@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "./NavBar";
 import "./Assest/StyleLogin.css";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 // function setStoragevalues() {
@@ -13,7 +14,9 @@ import axios from "axios";
 //   return JSON.parse(storeVal);
 // }
 
-export default function ReferralCreation({ navigate }) {
+export default function ReferralCreation() {
+  const navigate = useNavigate();
+
   const [input1, setInput] = useState({
     fullname: "",
     mobilenumber: "",
@@ -88,11 +91,11 @@ export default function ReferralCreation({ navigate }) {
                 </div>
                 <div className="input">
                   <input
-                    type="text"
+                    type="email"
                     id="input-email"
                     name="email"
                     placeholder="Email Address"
-                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    pattern="[\-a-zA-Z0-9~!$%\^&amp;*_=+}{\'?]+(\.[\-a-zA-Z0-9~!$%\^&amp;*_=+}{\'?]+)*@([a-zA-Z0-9_][\-a-zA-Z0-9_]*(\.[\-a-zA-Z0-9_]+)*\.([cC][oO][mM]))(:[0-9]{1,5})?$"
                     required
                     onChange={handleChange}
                   ></input>

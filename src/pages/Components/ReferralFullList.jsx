@@ -12,6 +12,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import TablePagination from "@mui/material/TablePagination";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const columns = [
@@ -36,11 +37,13 @@ const columns = [
 
 // const rows = [];
 
-export default function ReferralFullList({ navigate }) {
+export default function ReferralFullList() {
   const referralCreate = (e) => {
     e.preventDefault();
     navigate("/referralcreation");
   };
+
+  const navigate = useNavigate();
 
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -115,14 +118,18 @@ export default function ReferralFullList({ navigate }) {
                     .map((apiData) => {
                       return (
                         <TableRow key={apiData.id} hover role="checkbox">
-                          <TableCell align="center">{apiData.id}</TableCell>
-                          <TableCell align="center">
+                          <TableCell align="center" style={{ fontSize: 18 }}>
+                            {apiData.id}
+                          </TableCell>
+                          <TableCell align="center" style={{ fontSize: 18 }}>
                             {apiData.input1.fullname}
                           </TableCell>
-                          <TableCell align="center">
+                          <TableCell align="center" style={{ fontSize: 18 }}>
                             {apiData.input1.mobilenumber}
                           </TableCell>
-                          <TableCell align="center">12</TableCell>
+                          <TableCell align="center" style={{ fontSize: 18 }}>
+                            12
+                          </TableCell>
                         </TableRow>
                       );
                     })}

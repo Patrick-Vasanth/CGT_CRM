@@ -12,6 +12,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import TablePagination from "@mui/material/TablePagination";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const columns = [
@@ -42,11 +43,13 @@ const columns = [
   },
 ];
 
-export default function StudentFullList({ navigate }, props) {
+export default function StudentFullList(props) {
   const createStudent = (e) => {
     e.preventDefault();
     navigate("/studentcreation");
   };
+
+  const navigate = useNavigate();
 
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -86,7 +89,7 @@ export default function StudentFullList({ navigate }, props) {
             <Form className="search-input">
               <Form.Control
                 type="search"
-                placeholder="Referral Search"
+                placeholder="Student Search"
                 className=" search"
               />
               <FiSearch className="searchIcon" />
@@ -119,18 +122,45 @@ export default function StudentFullList({ navigate }, props) {
                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                     .map((apiStudData) => {
                       return (
-                        <TableRow key={apiStudData.id} hover role="checkbox">
-                          <TableCell align="center">{apiStudData.id}</TableCell>
-                          <TableCell align="center">
+                        <TableRow
+                          key={apiStudData.id}
+                          hover
+                          role="checkbox"
+                          sx={
+                            {
+                              // backgroundColor: "#11243A",
+                              // color: "#2b2b2b",
+                            }
+                          }
+                        >
+                          <TableCell
+                            align="center"
+                            style={{ fontSize: 18, color: "#2b2b2b" }}
+                          >
+                            {apiStudData.id}
+                          </TableCell>
+                          <TableCell
+                            align="center"
+                            style={{ fontSize: 18, color: "#2b2b2b" }}
+                          >
                             {apiStudData.input.fullname}
                           </TableCell>
-                          <TableCell align="center">
+                          <TableCell
+                            align="center"
+                            style={{ fontSize: 18, color: "#2b2b2b" }}
+                          >
                             {apiStudData.input.course}
                           </TableCell>
-                          <TableCell align="center">
+                          <TableCell
+                            align="center"
+                            style={{ fontSize: 18, color: "#2b2b2b" }}
+                          >
                             {apiStudData.input.referralname}
                           </TableCell>
-                          <TableCell align="center">
+                          <TableCell
+                            align="center"
+                            style={{ fontSize: 18, color: "#2b2b2b" }}
+                          >
                             {apiStudData.input.amount}
                           </TableCell>
                         </TableRow>
